@@ -1,0 +1,47 @@
+[
+  {
+    "id": "ae5705f7-17b4-47b7-b5b4-6cface444530",
+    "name": "Osbourn Schoular",
+    "email": "oschoular0@ftc.gov",
+    "Wallet": {
+      "id": "ac02e72a-0010-42b4-9f72-94241c57e168",
+      "balance": 366.20
+    }
+  },
+  {
+    "id": "6977f2d7-9f35-4821-a669-36c65d183813",
+    "name": "Arni Antecki",
+    "email": "aantecki1@squidoo.com",
+    "Wallet": {
+      "id": "a5c13395-efb7-48c8-a3c6-8804422d8993",
+      "balance": 361.59
+    }
+  },
+  {
+    "id": "4b96160f-35fe-4748-848d-dc7dcb710b78",
+    "name": "Murvyn Malek",
+    "email": "mmalek2@shop-pro.jp",
+    "Wallet": {
+      "id": "74ec273a-f0db-4831-9e6c-fb28506dc1b8",
+      "balance": 372.89
+    }
+  },
+  {
+    "id": "d8ecd743-0a86-4c85-8fb7-a2c14f932c1c",
+    "name": "Gusta Kaysor",
+    "email": "gkaysor3@ucoz.ru",
+    "Wallet": {
+      "id": "e5819b5d-ebf5-4195-9dc4-4057f7df9405",
+      "balance": 208.10
+    }
+  },
+  {
+    "id": "2a11706f-a889-44e9-aa9d-56ad22682b34",
+    "name": "Augustina Ingree",
+    "email": "aingree4@usnews.com",
+    "Wallet": {
+      "id": "028ddfba-2545-4539-8ee6-a122723538fc",
+      "balance": 779.58
+    }
+  }
+]

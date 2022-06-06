@@ -13,7 +13,7 @@ namespace Wallet.Api.Extensions
 
                 if (!env.IsProduction())
                 {
-                    connStr = config.GetConnectionString("default");
+                    connStr = config.GetConnectionString("Default");
                 }
                 options.UseNpgsql(connStr);
             });

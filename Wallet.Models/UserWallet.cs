@@ -2,12 +2,6 @@
 {
     public class UserWallet : BaseEntity
     {
-        public UserWallet(AppUser user)
-        {
-            User = user;
-            UserId = user.Id;
-        }
-       
         public double Balance { get; set; }
 
         //Foreign key for User

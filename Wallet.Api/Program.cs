@@ -1,5 +1,8 @@
-using Serilog; 
+using Microsoft.AspNetCore.Identity;
+using Serilog;
 using Wallet.Api.Extensions;
+using Wallet.Data;
+using Wallet.Models;
 
 var env = Environment.GetEnvironmentVariable("ASPNETCORE_ENVIRONMENT");
 var isDevelopment = env == Environments.Development;
@@ -28,6 +31,17 @@ try
     builder.Services.AddEndpointsApiExplorer();
     builder.Services.AddSwaggerGen();
 
+    builder.Services.AddDbContextAndConfigurations(builder.Environment, config);
+
+    // Adds our Authorization Policies to the Dependecy Injection Container
+    // services.AddPolicyAuthorization();
+
+    // Configure Identity
+    builder.Services.ConfigureIdentity();
+
+    builder.Services.AddAuthentication();
+    builder.Services.ConfigureAuthentication(config);
+
     var app = builder.Build();
 
     // Configure the HTTP request pipeline.
@@ -36,6 +50,26 @@ try
         app.UseSwagger();
         app.UseSwaggerUI();
     }
+
+    using (var scope = app.Services.CreateScope())
+    {
+        var context = scope.ServiceProvider.GetRequiredService<WalletDbContext>();
+        var userManager = scope.ServiceProvider.GetRequiredService<UserManager<AppUser>>();
+        var roleManager = scope.ServiceProvider.GetRequiredService<RoleManager<IdentityRole>>();
+
+        try
+        {
+            Seeder.InitializeDatabase(context, userManager, roleManager).GetAwaiter().GetResult();
+        }
+        catch (Exception ex)
+        {
+
+            throw;
+        }
+
+    }
+
+
 
     app.UseHttpsRedirection();
 
